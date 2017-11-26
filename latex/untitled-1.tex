@@ -1,0 +1,155 @@
+\documentclass[11pt, oneside, a4paper]{article}
+\usepackage{makeidx}
+\makeindex
+\pagestyle{headings}
+\author{qwer \and tyui}
+\title{1122}
+\newtheorem{law}{Law}[section]
+\newtheorem{jury}{Jury}
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\section{sec1}
+hello, world
+\subsection{sec1.1}
+\section{sec2}
+\ldots{} when 
+\begin{equation}
+    e = m\cdot c^2 \; 
+\end{equation}
+\ldots{}end\\
+\fbox{\today I think it is supercalifragilisticexpialidocious}
+% $...$ turn to math mode in text, $$..$$ will turn to math mode in new line
+\\ ``\,`asdaslfgakasda'\,'' \\ 0 - 2 = 4 \\ 13--6 \\ 13---6 \\ \~ 13$-6$ \\ is: $$13-6$$\\
+% \mathrm generate the text style, when in math mode, all will be math style
+$-30\,^{\circ}\mathrm{C}$ .c \\
+% textit(italic), textup(upright), textsl(slant), textbf(bold)
+\underline{the the} \emph{that that} \textit{text \emph{text}} \\
+\footnote{this}
+\newpage
+%below is the environment of \begin{...} until end
+% list:itemize(with dot), enumerate(with num), description(simple table)
+\begin{itemize}
+    \item qwerty
+    % item[...] can change the index of dot or num
+    \item[one] sadsag
+\end{itemize} 
+\begin{enumerate}
+    \item qwerty
+    \item sadsag
+\end{enumerate} 
+\begin{description}
+    \item qwerty
+    \item sadsag
+\end{description} 
+% flushleft(align left), flushright(align right), center(algin center)
+\begin{flushleft}
+    asdf \\ fgh
+\end{flushleft}
+\begin{center}
+    asdf \\ fgh
+\end{center}
+\begin{flushright}
+    asdf \\ fgh
+\end{flushright}
+% table: tabular
+\begin{tabular}{|l|c|r|}    %'|' means upright line, 'l,c,r' means this column align in left, center, right
+    \hline    %horizontal line
+    1 & 2 & 3\\    % '&' means jump to another column
+    \hline \hline
+    4 & 5 & 6\\    %double horizontal line, will divide in two table
+    \hline
+\end{tabular}
+
+\begin{tabular}{c}    %'|' means upright line, 'l,c,r' means this column align in left, center, right
+    \hline    %horizontal line
+    1 3\\    % '&' means jump to another column
+    \hline
+\end{tabular}
+
+% environment end
+
+%math
+%similar to $$
+\begin{math}
+    c^{2} = b^{2} + a^{2}
+\end{math}
+qwertyu
+%displatmath will center and take up one line , but without label unless using equation
+\begin{displaymath}
+    c^{2} = b^{2} + a^{2}
+\end{displaymath}
+%using \label or \ref to quote
+\begin{equation}\label{eps}
+    \epsilon > 0
+\end{equation} 
+From \ref{eps}, we can get \ldots{}
+% some difference with $$
+$\lim_{n \to \infty} \sum_{k=1}^n \frac{1}{k^2} = \frac{\pi^2}{6} $
+\begin{displaymath}
+    % if want to display text in displaymath, using \textrm{text}, using \, \quad, \qquad
+    \lim_{n \to \infty} \sum_{k=1}^n \frac{1}{k^2} = \frac{\pi^2}{6} \textrm{in all}
+\end{displaymath}
+% greek letters    \alpha \Delta \beta  \gamma \Gamma ...
+$ \alpha \Delta $
+$ a_{1} b^{2} \sqrt[3]{x} \quad a\cdot b \quad \overline{m+n} \underline{m+n} \overbrace{a+b+...}^{26} \underbrace{a+b+...}_{26} $
+% \vec or \overrightarrow is used to define vector, but \vec only function in one variable
+$ \vec abc \quad \overrightarrow{a+b+c} \\ $
+% {... \choose ...}, {... \atop ...}, \stackrel
+$ {n \choose k}\qquad {x \atop y+2} \quad \int a+b\stackrel{!}{=}c $
+% integral operator    \int_{}^{}, \sum, \prod
+$ \int_{-2}^{5} $
+% \left( ... \right) will adjust the size of brace. If only single '(', \right .
+\begin{displaymath}
+    1 + \left( \frac{1}{ 1-x^{2} }\right) ^3 \quad
+    1 + ( \frac{1}{ 1-x^{2} }) ^3
+\end{displaymath}
+% display matrix
+\begin{displaymath}
+    \mathbf{X} = 
+    \left ( 
+        \begin{array}{ccc} % ccc can replace by c|c|c(will show upright line)
+            x_{11} & x_{12} & \ldots{} \\  % can add \hline
+            x_{21} & x_{22} & \ldots{} \\
+            \vdots & \vdots & \ddots
+        \end{array} 
+    \right)
+\end{displaymath}
+% display piecewise function
+\begin{displaymath}
+    \mathbf{y} = 
+    \left \{
+        \begin{array}{ccc}
+            1 & \textrm{if $x>b$} \\
+            2 & \textrm{if $x<b$}
+        \end{array}
+    \right .
+\end{displaymath}
+% eqnarray will generate equation system
+\begin{eqnarray}
+    1 + 1 =2\\1 + 2 = 3 \\ 1 + 3 = 4
+\end{eqnarray}
+% phantom{1} will generate '1' but will not display
+\begin{displaymath}
+    {}^{12}_{6} \textrm{C} \quad {}^{12}_{\phantom{1}6} \textrm{C}
+\end{displaymath}
+% define theorem: \newtheorem{law}{123456}[section]
+\begin{law}
+    QWERTY
+\end{law}
+\begin{jury}
+    ASDFG
+\end{jury}
+% mathbf, boldmath: two kinds of bold. mathbf use the math type, boldmath only add bold and only use in text
+\begin{displaymath}
+    \mu, M \qquad \mathbf{\mu, M} 
+\end{displaymath}
+\boldmath {$\mu, M$}
+% bibliography
+Part1 \cite{1} has proposed that \ldots
+\begin{thebibliography}{86}
+    \bibitem{1} H.~P
+\end{thebibliography}
+
+\end{document}
